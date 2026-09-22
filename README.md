@@ -25,19 +25,46 @@ This project demonstrates hands-on Windows Server administration in an AWS EC2 e
 ## Implementation
 
 ### 1. Windows Server Deployment
-Deployed a Windows Server 2022 instance using Amazon EC2 and established administrative access through Remote Desktop Protocol (RDP).
+<img src="images/01-windows-server-dashboard.jpeg.jpeg" width="500">
+*Windows Server 2022 environment used for the AWS EC2 administration lab.*
 
 ### 2. User and Access Management
 Created and managed local user accounts and configured group membership to control access to server resources.
 
+<img src="images/02-local-users-and-groups.jpeg.jpeg" width="500">
+
+*Reviewed Windows Server local groups used to manage user access and privileges.*
+
+<img src="images/03-create-local-user.jpeg.jpeg" width="500">
+
+*Created the `jsmith` local user account for John Smith and associated the account with the Marketing Department.*
+
+<img src="images/04-user-account-properties.jpeg.jpeg" width="500">
+
+*Verified the newly created `jsmith` account and its configured user properties.*
+
 ### 3. NTFS Permissions
 Created a departmental folder and configured NTFS permissions to provide the required access without granting unnecessary administrative privileges.
 
+<img src="images/05-marketing-folder.jpeg.jpeg" width="500">
+
+*Created the `C:\Marketing` departmental folder used for file-access and sharing configuration.*
 ### 4. SMB File Sharing
 Configured an SMB network share and applied share permissions to control network-based access to departmental resources.
+<img src="images/06-smb-share-permissions.jpeg.jpeg" width="500">
+
+*Configured the Marketing share so the standard user received Change and Read access without Full Control.*
+
+<img src="images/07-marketing-network-share.jpeg.jpeg" width="500">
+
+*Published the Marketing folder as an SMB network share and verified its network path.*
 
 ### 5. Access Validation
 Tested access using a standard user account to verify that NTFS and share permissions operated as intended.
+
+<img src="images/08-smb-access-validation.jpeg.jpeg" width="500">
+
+*Verified authorized access to the Marketing network share and successfully created a test file.*
 
 ### 6. Security Event Monitoring
 Used Windows Event Viewer to investigate authentication activity, including:
@@ -45,6 +72,11 @@ Used Windows Event Viewer to investigate authentication activity, including:
 - Event ID 4624 — Successful logon
 - Event ID 4625 — Failed logon
 
+<img src="images/09-successful-logon-event-4624.jpeg.jpeg" width="500">
+
+*Used Windows Event Viewer to identify Event ID 4624 and confirm a successful authentication event associated with the `jsmith` user account.*
+
+## Troubleshooting
 ## Troubleshooting
 During the lab, I investigated network-share connectivity, authentication, user permissions, and access-control issues. Troubleshooting included verifying account configuration, network paths, NTFS permissions, share permissions, and Windows security logs.
 
